@@ -1,3 +1,3 @@
-import Example from "./example.js"
+import Filmstrip from "./filmstrip.jsx"
 
-export default {Example};
+export default {Filmstrip};

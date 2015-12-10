@@ -1,0 +1,93 @@
+.filmstrip{
+	padding: 0;
+	margin: 10px;
+	display: flex;
+}
+
+.navButton{ 
+	border: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.viewport{ 
+	overflow-x: hidden; 
+	position: relative;
+	width: 100%;
+}
+
+.strip{ 
+	position: absolute;
+	top: 0;
+	left: 0;
+	white-space: nowrap; 
+	display: flex;
+
+	-webkit-transition-property: left;
+	transition-property: left;
+	transition-duration: 0.4s;
+	transition-timing-function: ease;
+}
+
+.viewport::before{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background: linear-gradient(to right, 
+		rgba(255,255,255,1) 10%,
+		rgba(255,255,255,0) 30%
+	);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	content: '';
+}
+
+.viewport::after{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background: linear-gradient(to right, 
+		rgba(255,255,255,0) 70%,
+		rgba(255,255,255,1) 90%
+	);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	content: '';
+}
+
+/* styles below this point are for the example only, no need to keep */
+
+.navButton{
+	background-color: white; 
+	width: 40px;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 24pt;
+}
+
+.strip-item{ 
+	background-color: #bbb;
+	height: 100px; 
+	margin: 0;
+	width: 100px;
+	color: white;
+	text-align: center;
+	line-height: 100px;
+	font-size: 48pt;
+	font-family: Avenir;
+	font-weight: bold;
+}
+
+.strip-item:nth-child(even){
+	background-color: #ccc;
+}
